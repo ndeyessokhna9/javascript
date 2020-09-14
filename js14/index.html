@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+	<title> Tuto JS #14 -L'objet XMLHttpRequest(Ajax) </title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<h1>  Tuto JS #14 -L'objet XMLHttpRequest(Ajax)</h1>
+	
+	<div id="demo"></div>
+	<h2>The XMLHttpRequest Object</h2>
+<button type="button" onclick="loadDoc()">Change Content</button>
+<!-- 	<form id="formreq"> --> 
+<input type="text " placeholder >
+		
+
+	<!-- </form> -->
+<script>
+	
+function loadDoc(){
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function(){
+	// console.log(this);
+
+	if (this.readyState == 4 && this.status ==200 ){
+
+		 document.getElementById("demo").innerHTML =
+      this.response;
+		
+	}
+	else if (this.readyState == 4 && this.status == 404) {
+			alert("Erreur 404:/ " );""
+		}
+};
+xhr.open("GET","ajax_info.tx", true);
+// xhr.open("GET","async/donnees.txt",true);
+xhr.send();
+xhr.responseType = "text";
+}
+
+</script>
+
+</body>
+</html>

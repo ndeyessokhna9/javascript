@@ -1,0 +1,1 @@
+Ceci eet un texte trés intressant sur les requettes asynchrones ou pas!.
